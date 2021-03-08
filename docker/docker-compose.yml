@@ -1,0 +1,10 @@
+version: "3"
+services:    
+  httpd:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ${PROJECT_PATH}/:/var/www/html:cached
+      - ./httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
+      - ./php.ini:/usr/local/etc/php/php.ini
