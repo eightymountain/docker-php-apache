@@ -2,10 +2,10 @@ FROM centos:7
 
 RUN yum -y update
 
-# RUN curl -L -s http://repos.fedorapeople.org/repos/jkaluza/httpd24/epel-httpd24.repo > /etc/yum.repos.d/epel-httpd24.repo
+RUN curl -L -s http://repos.fedorapeople.org/repos/jkaluza/httpd24/epel-httpd24.repo > /etc/yum.repos.d/epel-httpd24.repo
 RUN yum -y install httpd
 
-RUN yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm 
+RUN yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm 
 RUN yum -y install epel-release yum-utils
 
 RUN yum-config-manager --disable remi-php54  
